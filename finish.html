@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Finish – SEB ID Test</title>
+    <style>
+        body { font-family: -apple-system; padding: 24px; }
+        .info { margin-top: 16px; padding: 12px; background: #f0f0f0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Finish Page</h1>
+    <p>If everything works, this page should open in the SAME browser you used to start the flow.</p>
+
+    <div class="info" id="browser"></div>
+
+<script>
+function detectBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+
+   if (ua.includes("crios")) return "Chrome (iOS)";
+    if (ua.includes("fxios")) return "Firefox (iOS)";
+    if (ua.includes("edg")) return "Edge (iOS)";
+    if (ua.includes("version") && ua.includes("safari")) return "Safari";
+
+    return "Unknown Browser";
+}
+
+document.getElementById("browser").textContent =
+    "Detected Browser: " + detectBrowser();
+</script>
+
+</body>
+</html>
